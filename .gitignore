@@ -1,0 +1,15 @@
+# Compilados
+*.exe
+*.o
+*.obj
+*.out
+servidor
+cliente
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+*.swp
