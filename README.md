@@ -1,65 +1,51 @@
 # AutoDeusto
 
-Proyecto de Programación IV — Universidad de Deusto
-Sistema de gestión de concesionario con arquitectura cliente/servidor en C.
+Base inicial de un proyecto académico en **C** para la gestión de un concesionario, desarrollado en la Universidad de Deusto.
 
----
+## Estado del código
 
-## Integrantes
+El repositorio público está en una fase inicial. El único programa implementado, `src/prueba.c`, imprime `Prueba` en la consola. Se puede compilar y ejecutar; todavía no implementa gestión de vehículos, clientes o ventas ni comunicación cliente/servidor.
 
-| Nombre | GitHub |
-|--------|--------|
-|        |        |
-|        |        |
-|        |        |
-|        |        |
+La arquitectura cliente/servidor descrita en la propuesta original es un objetivo de desarrollo, no una funcionalidad disponible. No hay una aplicación comercial ni una demostración de ese sistema completo.
 
----
+## Estructura disponible
 
-## Descripción
-
-AutoDeusto es un sistema de gestión de concesionario de coches.
-El proyecto sigue una arquitectura **cliente/servidor**: el servidor gestiona los datos
-y los clientes se conectan a él para realizar operaciones.
-
----
-
-## Estructura del proyecto
-
-```
-AutoDeusto_ProyectoProgIV/
-├── include/     → cabeceras (.h): definición de structs y funciones
-├── src/         → código fuente (.c): implementación
-├── data/        → archivos de datos (ej. coches.dat)
-├── docs/        → documentación del proyecto
-├── .gitignore   → archivos a ignorar por Git
-└── README.md    → este archivo
+```text
+AutoDeusto_ProyectoProgIV_Grupos2/
+├── src/
+│   └── prueba.c
+├── .gitignore
+└── README.md
 ```
 
----
+## Compilar y ejecutar
 
-## Normas de trabajo con Git
+Se necesita un compilador de C. Comprobado con GCC/MinGW en Windows:
 
-- **No trabajar directamente sobre `main`.**
-  La rama `main` es la rama estable. Solo se fusiona código revisado.
+```powershell
+gcc -Wall -Wextra -Wpedantic src/prueba.c -o autodeusto.exe
+.\autodeusto.exe
+```
 
-- **Cada integrante trabaja en su propia rama.**
-  Ejemplo: `git checkout -b feature/gestion-vehiculos`
+En Linux o macOS con GCC:
 
-- **Hacer `pull` antes de empezar a trabajar.**
-  ```bash
-  git pull origin main
-  ```
+```sh
+gcc -Wall -Wextra -Wpedantic src/prueba.c -o autodeusto
+./autodeusto
+```
 
-- **Commits claros y descriptivos.**
-  Mal: `git commit -m "cambios"`
-  Bien: `git commit -m "Añadir struct Vehiculo en vehiculo.h"`
+Salida actual: `Prueba`. La compilación y ejecución se comprobaron el 11 de octubre de 2026 en Windows. La variante Linux/macOS se proporciona como instrucción equivalente y no se ha ejecutado en esos sistemas en esta revisión.
 
-- **No subir ejecutables ni archivos temporales.**
-  El `.gitignore` ya los excluye. No lo modifiques sin avisar al equipo.
+## Próximos pasos
 
----
+- Definir estructuras de datos y operaciones del dominio.
+- Implementar y probar la persistencia.
+- Diseñar la comunicación cliente/servidor cuando exista una base funcional.
 
-## Compilación
+Estos pasos son planificación; no se presentan como funcionalidades terminadas.
 
-> *Se añadirá cuando el código esté listo.*
+## Colaboración
+
+Se conserva íntegro el historial existente. El README original no identifica a los integrantes del grupo, por lo que esta documentación no añade nombres ni atribuye módulos a colaboradores sin confirmar.
+
+Las mejoras se preparan en ramas y se revisan mediante pull requests. No se deben subir ejecutables ni archivos temporales. El repositorio no declara actualmente una licencia general de reutilización.
